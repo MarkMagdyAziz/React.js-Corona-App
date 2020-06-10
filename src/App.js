@@ -1,9 +1,8 @@
 import React from 'react';
-
 // import Cards from './components/Cards';
 // import Chart from './components/Chart';
 // import CountryPicker from './components/CountryPicker';
-import { Cards, Chart, CountryPicker } from './components';
+import { Cards, Chart, CountryPicker , Clock} from './components';
 import styles from './App.module.css';
 import { fetchData } from './api';
 import coronaImage from './images/covid-19 (3).jpg';
@@ -41,9 +40,11 @@ class App extends React.Component {
         return (
             <div className={styles.container}>
                 <img className={styles.image} src={coronaImage} alt="COVID-19"/>
+                <Clock/>
                 <Cards data={data} />
                 <CountryPicker handleCountryChange={this.handleCountryChange}/>
                 <Chart data={data} country={country} />
+                <span className={styles.cp}> &copy; Copyright 2020 Mark Wahba.  All rights reserved. </span>
             </div>
         );
     }
